@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="App03_TipoLayout.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App03_TipoLayout.UWP"
+    RequestedTheme="Light">
+
+</Application>
