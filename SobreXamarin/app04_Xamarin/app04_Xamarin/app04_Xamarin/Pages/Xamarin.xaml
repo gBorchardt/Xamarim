@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app04_Xamarin.Pages.Xamarin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <StackLayout BackgroundColor="#FFC926" Padding="30">
+                    <Image Source="Logo.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="#0D1F2D" HeightRequest="100" Padding="30">
+                    <Label Text="Xamarin" FontSize="48" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="30">
+                    <RelativeLayout>
+                        <BoxView x:Name="BoxOne" BackgroundColor="#0D1F2D" WidthRequest="30" HeightRequest="30" />
+                        <BoxView x:Name="BoxTwo" BackgroundColor="#25567E" WidthRequest="30" HeightRequest="30" 
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=BoxOne, Property=X, Factor=100, Constant=12}"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=BoxOne, Property=Y, Factor=100, Constant=12}"
+                             />
+                        <BoxView BackgroundColor="#4E93CB" WidthRequest="30" HeightRequest="30" 
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=BoxTwo, Property=X, Factor=100, Constant=12}"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=BoxTwo, Property=Y, Factor=100, Constant=12}"
+                             />
+                    </RelativeLayout>
+
+                    <Label Text="Empresa" FontSize="48" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Black"/>
+                </StackLayout>
+                <StackLayout Padding="30">
+                    <Label Text="Lorem Ipsum" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
