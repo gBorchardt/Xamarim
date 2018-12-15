@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App05_ControleXF.Controles.ImagePage">
+    <ContentPage.Content>
+        <StackLayout x:Name="Container">
+            <Image 
+                Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgVVKO9Xm53EfghytAcgYwkW3XRaoMtb-VvNXN8Uc-sKg8sXeV"
+                Aspect="Fill"
+                IsOpaque="True"
+                x:Name="ImageOne"
+                
+                VerticalOptions="FillAndExpand"
+                />
+
+            <!--Aspect="Fill" - Preenche toda tela -->
+            <!--Aspect="AspectFill" - Aumenta o máximo e mantem proporção -->
+            <!--Aspect="AspectFit" - Tamanho da imagem, se tela menor, diminui imagem (mantem proporção e tam max) -->
+
+            <!--IsOpaque="True" - Ganha agilidade para imagens sem fundo transparente -->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
