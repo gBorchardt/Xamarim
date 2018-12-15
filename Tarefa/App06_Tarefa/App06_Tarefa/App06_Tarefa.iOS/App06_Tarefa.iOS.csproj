@@ -157,4 +157,28 @@
       <Name>App06_Tarefa</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AddBotao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CheckOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CheckOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Delete.png" />
+  </ItemGroup>
 </Project>

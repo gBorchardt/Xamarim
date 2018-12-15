@@ -3,10 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App06_Tarefa.Telas.Cadastro">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
+           
+            <Label Text="Nome" FontAttributes="Bold"/>
+            <Entry x:Name="txtNome"/>
+            <Label Text="Prioridade" FontAttributes="Bold"/>
+
+            <!-- 
+                No UWP é criada uma pasta resource para não largar as imagens soltas na raiz
+                Android/IOS (Pasta PAdrão): <Image Source="4.png" />
+                UWP: <Image Source="Resources/4.png" />
+            -->
+            
+            <StackLayout x:Name="SLPrioridades">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="Image4.png"/>
+                                <On Platform="UWP" Value="Resources/Image4.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Urgente e Importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="Image3.png"/>
+                                <On Platform="UWP" Value="Resources/Image3.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Urgente e Não Importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="Image2.png"/>
+                                <On Platform="UWP" Value="Resources/Image2.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Não Urgente e Importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="Image1.png"/>
+                                <On Platform="UWP" Value="Resources/Image1.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Não Urgente e Não Importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="OK" HorizontalOptions="End" BackgroundColor="Blue" TextColor="White" Clicked="Button_Clicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
