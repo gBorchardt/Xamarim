@@ -35,5 +35,17 @@ namespace App07_Cell.Menu
             Detail = new NavigationPage(new EntryCellPage());
             IsPresented = false;
         }
+
+        private void GoSwitchCellPage(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new SwitchCellPage());
+            IsPresented = false;
+        }
+
+        private void GoViewCellPage(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new ViewCellPage());
+            IsPresented = false;
+        }
     }
 }

@@ -9,6 +9,8 @@
                 <Button Text="TextCell" Clicked="GoTextCellPage"/>
                 <Button Text="ImageCell" Clicked="GoImageCellPage"/>
                 <Button Text="EntryCell" Clicked="GoEntryCellPage"/>
+                <Button Text="SwitchCell" Clicked="GoSwitchCellPage"/>
+                <Button Text="ViewCell" Clicked="GoViewCellPage"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
