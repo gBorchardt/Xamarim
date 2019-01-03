@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App07_Cell.Pagina.ListViewPage">
+    <ContentPage.Content>
+        <ListView x:Name="ListaFuncionarios" ItemSelected="ListaFuncionarios_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}" Detail="{Binding Cargo}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Férias" Clicked="MenuItemFerias_Clicked" CommandParameter="{Binding .}"/> 
+                            <MenuItem Text="Abono" Clicked="MenuItemAbono_Clicked" CommandParameter="{Binding .}"/>
+                            <!--{Binding .} = Envia todo objeto (Funcionario)-->
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

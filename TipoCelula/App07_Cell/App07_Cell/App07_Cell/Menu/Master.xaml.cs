@@ -1,16 +1,12 @@
 ﻿using App07_Cell.Pagina;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace App07_Cell.Menu
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Master : MasterDetailPage
 	{
 		public Master ()
@@ -45,6 +41,18 @@ namespace App07_Cell.Menu
         private void GoViewCellPage(object sender, EventArgs e)
         {
             Detail = new NavigationPage(new ViewCellPage());
+            IsPresented = false;
+        }
+
+        private void GoListViewPage(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new ListViewPage());
+            IsPresented = false;
+        }
+
+        private void GoListViewButtonPage(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new ListViewButtonPage());
             IsPresented = false;
         }
     }

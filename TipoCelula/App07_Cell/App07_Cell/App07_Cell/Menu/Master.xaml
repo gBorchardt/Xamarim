@@ -6,11 +6,16 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <StackLayout>
+                <Label Text="Celulas"/>
                 <Button Text="TextCell" Clicked="GoTextCellPage"/>
                 <Button Text="ImageCell" Clicked="GoImageCellPage"/>
                 <Button Text="EntryCell" Clicked="GoEntryCellPage"/>
                 <Button Text="SwitchCell" Clicked="GoSwitchCellPage"/>
                 <Button Text="ViewCell" Clicked="GoViewCellPage"/>
+
+                <Label Text="Componentes"/>
+                <Button Text="ListViewPage" Clicked="GoListViewPage"/>
+                <Button Text="ListViewButtonPage" Clicked="GoListViewButtonPage"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
