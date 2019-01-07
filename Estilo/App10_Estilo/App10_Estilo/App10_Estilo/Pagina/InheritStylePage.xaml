@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10_Estilo.Pagina.InheritStylePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Inherit - Herança em termos de nivel de classe-->
+            <!--Elemento pai - centralizar caractesticas comuns entre varios controles-->
+            <Style x:Key="XStyleView" TargetType="View">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="BackgroundColor" Value="Green"/>
+            </Style>
+            <Style x:Key="XStyleLabel" TargetType="Label" BasedOn="{StaticResource XStyleView}">
+                <Setter Property="TextColor" Value="Red"/>
+            </Style>
+            <Style x:Key="XStyleButton" TargetType="Button" BasedOn="{StaticResource XStyleView}">
+                <Setter Property="TextColor" Value="Blue"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!" Style="{StaticResource XStyleLabel}" />
+            <Label Text="Welcome to Xamarin.Forms!"  />
+            <Button Text="OK" Style="{StaticResource XStyleButton}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
