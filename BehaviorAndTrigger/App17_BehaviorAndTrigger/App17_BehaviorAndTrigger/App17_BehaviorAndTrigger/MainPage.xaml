@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App17_BehaviorAndTrigger"
+             xmlns:lib="clr-namespace:App17_BehaviorAndTrigger.Lib"
+             x:Class="App17_BehaviorAndTrigger.MainPage">
+
+    <StackLayout VerticalOptions="Center">
+        
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name="txtNome" Placeholder="Digite o seu nome" Text="">
+            <Entry.Behaviors>
+                <lib:MaiusculoBehavior/>
+            </Entry.Behaviors>
+
+            <Entry.Triggers>
+                <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                    <Setter Property="BackgroundColor" Value="Blue"/>
+                    <Setter Property="TextColor" Value="White"/>
+                </Trigger>
+
+                <Trigger TargetType="Entry" Property="IsFocused" Value="False">
+                    <Setter Property="BackgroundColor" Value="Yellow"/>
+                    <Setter Property="TextColor" Value="Blue"/>
+                </Trigger>
+            </Entry.Triggers>
+        </Entry>
+
+        <Entry x:Name="txtEmail" Placeholder="Digite seu email">
+            <Entry.Triggers>
+                <EventTrigger Event="TextChanged">
+                    <lib:EmailValidoTrigger/>
+                </EventTrigger>
+            </Entry.Triggers>
+        </Entry>
+
+        <Button Text="Enviar" TextColor="Black" BackgroundColor="Azure" >
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference txtNome}, Path=Text.Length}" Value="0">
+                    <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="BackgroundColor" Value="Gray"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+        
+    </StackLayout>
+
+</ContentPage>
