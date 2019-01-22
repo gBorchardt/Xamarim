@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App18_ListView"
+             x:Class="App18_ListView.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SeletorTemplate x:Key="SelectorPessoa"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+            <Label Text="Welcome to Xamarin.Forms!" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+            <!-- GroupDisplayBinding="{Binding Titulo}" GroupShortNameBinding="{Binding Descricao} -->
+        <ListView x:Name="ListaFuncionarios" IsGroupingEnabled="True" ItemTemplate="{StaticResource SelectorPessoa}">
+
+            <!-- Coloca texto dentro do listview para eviar conflito com scrollview (Utilizando Header e Footer)-->
+            <ListView.Header>
+                <Label Text="Header!" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            </ListView.Header>
+
+            <ListView.Footer>
+                <Label Text="Footer!" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />                
+            </ListView.Footer>
+            
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="15, 0, 0, 0">
+                            <Label Text="{Binding Titulo}"/>
+                            <Label Text="{Binding Descricao}" TextColor="LightGray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+        </ListView>
+        
+    </StackLayout>
+
+</ContentPage>
