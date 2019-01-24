@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Ap22_CustomControlNative"
+             xmlns:control="clr-namespace:Ap22_CustomControlNative.Controls"
+             x:Class="Ap22_CustomControlNative.MainPage">
+
+    <StackLayout>
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+        <control:CustomBoxView Espessura="{Binding Path=Value}" HorizontalOptions="Center" WidthRequest="200" HeightRequest="200" BindingContext="{x:Reference SliderEspessura}"/>
+
+        <Slider x:Name="SliderEspessura" Minimum="0" Maximum="100"/>
+
+    </StackLayout>
+
+</ContentPage>
