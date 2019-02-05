@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App25_MultiIdioma"
+             xmlns:traducao="clr-namespace:App25_MultiIdioma.Traducao"
+             x:Class="App25_MultiIdioma.MainPage">
+
+    <StackLayout>
+        
+        <!--Melhor forma de tradução-->
+        <Label x:Name="lblMsg" 
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+
+        <Label Text="{traducao:Translate Text=MSG_01}"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+        
+    </StackLayout>
+
+</ContentPage>

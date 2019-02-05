@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App26_Annotation"
+             x:Class="App26_Annotation.MainPage">
+
+    <StackLayout>
+
+        <Label x:Name="lblMsg"/>
+        <Entry x:Name="txtNome" Placeholder="Digite seu Nome"/>
+        <Entry x:Name="txtEmail" Placeholder="Digite seu Email"/>
+        <Entry x:Name="txtCpf" Placeholder="Digite seu CPF" />
+        <Button x:Name="btnSalvar" Text="VALIDAR"/>
+        
+    </StackLayout>
+
+</ContentPage>
