@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App28_StorageFile"
+             x:Class="App28_StorageFile.MainPage">
+
+    <StackLayout>
+        <Label x:Name="lblLeitura"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+        <Button x:Name="btnLer" Text="Ler Arquivo"/>
+
+        <Entry x:Name="txtConteudo" Placeholder="Digite um texto"/>
+        <Button x:Name="btnEscrever" Text="Escrever Arquivo"/>
+
+    </StackLayout>
+
+</ContentPage>
