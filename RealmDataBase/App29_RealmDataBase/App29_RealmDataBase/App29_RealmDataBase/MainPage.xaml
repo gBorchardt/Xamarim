@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App29_RealmDataBase"
+             x:Class="App29_RealmDataBase.MainPage">
+
+    <StackLayout>
+
+        <StackLayout>
+            <Entry x:Name="txtId" IsVisible="False"/>
+            <Entry x:Name="txtItem" Placeholder="Digite o Item"/>
+            <Entry x:Name="txtQuantidade" Placeholder="Quantidade" Keyboard="Numeric"/>
+            <Button x:Name="btnSalvar" Text="Salvar"/>
+
+
+        </StackLayout>        
+        
+        <StackLayout Orientation="Horizontal">
+            <ListView x:Name="lstItens">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Item}" Detail="{Binding Quantidade}">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Excluir" Clicked="ExcluirItem_Clicked" CommandParameter="{Binding .}" IsDestructive="True"/>
+                                <MenuItem Text="Editar" Clicked="EditarItem_Clicked" CommandParameter="{Binding .}" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+        
+    </StackLayout>
+
+</ContentPage>
