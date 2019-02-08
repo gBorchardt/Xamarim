@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Profissional.Nome}"
+             xmlns:help="clr-namespace:App30_PrismAndRealm.Helper"
+             x:Class="App30_PrismAndRealm.Views.DetalheProfissionalPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <help:ConversorData x:Key="ConversorData"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="0">
+
+        <StackLayout BackgroundColor="White" Padding="10">
+            <Image Source="{Binding Profissional.Img}"/>
+            <Label Text="{Binding Profissional.Nome}" TextColor="Black" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding Profissional.Especialidade}" TextColor="Gray" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <StackLayout BackgroundColor="#E2E2E2" Padding="10">
+            <Label Text="{Binding Profissional.Descricao}" TextColor="Gray"/>
+        </StackLayout>
+
+        <ListView ItemsSource="{Binding Comentarios}" HasUnevenRows="True" SeparatorColor="Gray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="#F5F5F5">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Autor}" TextColor="Black" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding Data, Converter={StaticResource ConversorData}}" TextColor="#CCCCCC" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <Label Text="{Binding Descricao}" TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+
+
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:bh="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             x:Class="App30_PrismAndRealm.Views.ListaProfissionaisPage">
+
+    <ListView ItemsSource="{Binding ListaProf}" HasUnevenRows="True">
+
+        <ListView.Behaviors>
+            <bh:EventToCommandBehavior 
+                EventName="ItemTapped" 
+                Command="{Binding ProfissionalCommand}"
+                EventArgsParameterPath="Item"
+                />
+        </ListView.Behaviors>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell ImageSource="{Binding Img}" Text="{Binding Nome}" Detail="{Binding Especialidade}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
