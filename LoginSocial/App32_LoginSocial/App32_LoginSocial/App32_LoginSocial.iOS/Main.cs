@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace App13_Mimica.iOS
+namespace App32_LoginSocial.iOS
 {
     public class Application
     {
